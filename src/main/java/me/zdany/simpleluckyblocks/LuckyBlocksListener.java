@@ -22,7 +22,7 @@ public class LuckyBlocksListener implements Listener {
         if(!SimpleLuckyBlocks.getInstance().isLuckyBlock(block)) return;
         List<ConfigurationSection> actions = new ArrayList<>();
         for(String action : SimpleLuckyBlocks.getInstance().getConfig().getConfigurationSection("actions").getKeys(false)) actions.add(SimpleLuckyBlocks.getInstance().getConfig().getConfigurationSection("actions." + action));
-        int selectedAction = new Random().nextInt(0, actions.size());
+        int selectedAction = new Random().nextInt(actions.size());
         actions.get(selectedAction).getStringList("commands").forEach(command -> {
             SimpleLuckyBlocks.getInstance().executeLuckyCommand(actions.get(selectedAction).getInt("sender"), player, command);
         });

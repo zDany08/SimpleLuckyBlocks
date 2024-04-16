@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "me.zdany.simpleluckyblocks"
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
@@ -16,7 +16,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.11.5")
 }
 
