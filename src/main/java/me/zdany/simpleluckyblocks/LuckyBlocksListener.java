@@ -19,6 +19,7 @@ public class LuckyBlocksListener implements Listener {
         Player player = event.getPlayer();
         Block block = event.getBlock();
         if(!SimpleLuckyBlocks.getInstance().getConfig().getBoolean("enabled")) return;
+        if(!player.hasPermission("simpleluckyblocks.action")) return;
         if(!SimpleLuckyBlocks.getInstance().isLuckyBlock(block)) return;
         List<ConfigurationSection> actions = new ArrayList<>();
         for(String action : SimpleLuckyBlocks.getInstance().getConfig().getConfigurationSection("actions").getKeys(false)) actions.add(SimpleLuckyBlocks.getInstance().getConfig().getConfigurationSection("actions." + action));
