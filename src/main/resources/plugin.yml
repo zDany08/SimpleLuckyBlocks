@@ -1,16 +1,29 @@
 name: SimpleLuckyBlocks
 main: me.zdany.simpleluckyblocks.SimpleLuckyBlocks
 description: Crate your own lucky blocks!
-version: 1.2.0
+version: 1.3.0
 api-version: 1.13
 authors: [ zDany ]
 softdepend: [ PlaceholderAPI ]
+commands:
+  luckyblock:
+    description: Command of SimpleLuckyBlocks
+    aliases: [ luckyb, lblock, lb ]
 permissions:
   simpleluckyblocks.*:
     description: Permission of SimpleLuckyBlocks
     default: op
     children:
       simpleluckyblocks.action: true
+      simpleluckyblocks.cmd.luckyblock: true
+  simpleluckyblocks.cmd.*:
+    description: Permission of SimpleLuckyBlocks
+    default: op
+    children:
+      simpleluckyblocks.cmd.luckyblock: true
   simpleluckyblocks.action:
+    description: Permission of SimpleLuckyBlocks
+    default: op
+  simpleluckyblocks.cmd.luckyblock:
     description: Permission of SimpleLuckyBlocks
     default: op

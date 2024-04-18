@@ -12,7 +12,13 @@
 #╚═════╝░╚══════╝░╚════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░
 
 enabled: true # Enable lucky blocks
-lucky-block: 'SPONGE' # The block you want to use as a lucky block
+lucky-block:
+  material: 'SPONGE'
+  enchanted: true
+  display-name: '&8&koo &6&lLucky Block &8&koo'
+  lore:
+    - '&eThis is a &b&nLucky Block'
+    - '&ePlugin by &7zDany'
 
 actions:
   your-action:
@@ -24,3 +30,9 @@ actions:
     sender: 0
     commands:
       - 'kick {PLAYER} Oops...'
+
+messages:
+  no-permission: '&cYou have no permission to do that.'
+  only-player: '&cYou have to be a player to do that.'
+  not-online: '&c{PLAYER} is not online.'
+  usage: '&7Usage: &c/luckyblock <amount> <player>'
