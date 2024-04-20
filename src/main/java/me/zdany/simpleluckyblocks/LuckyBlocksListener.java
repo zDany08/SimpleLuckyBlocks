@@ -1,6 +1,7 @@
 package me.zdany.simpleluckyblocks;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -55,5 +56,11 @@ public class LuckyBlocksListener implements Listener {
         actions.get(selectedAction).getStringList("commands").forEach(command -> {
             SimpleLuckyBlocks.getInstance().executeLuckyCommand(actions.get(selectedAction).getInt("sender"), player, command);
         });
+        if(NMS.getNMSVersion() >= 12) {
+            event.setDropItems(false);
+        }else {
+            event.setCancelled(true);
+            block.setType(Material.AIR);
+        }
     }
 }
