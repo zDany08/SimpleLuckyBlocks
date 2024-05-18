@@ -13,7 +13,7 @@
 
 enabled: true # Enable lucky blocks
 lucky-block:
-  material: 'SPONGE'
+  material: SPONGE
   enchanted: true
   display-name: '&8&koo &6&lLucky Block &8&koo'
   lore:
@@ -22,7 +22,7 @@ lucky-block:
 
 actions:
   your-action:
-    sender: 0 # The sender of the commands below -> 0 = Console, 1 = Player
+    sender: 0 # 0 = Console, 1 = Player
     commands: # The list of commands will be executed
       - 'give {PLAYER} apple 16'
       - 'tellraw {PLAYER} {"text":"You got some apples!","color":"red","bold":true}'

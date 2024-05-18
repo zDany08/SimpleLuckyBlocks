@@ -1,5 +1,7 @@
-package me.zdany.simpleluckyblocks;
+package me.zdany.simpleluckyblocks.events;
 
+import me.zdany.simpleluckyblocks.NMS;
+import me.zdany.simpleluckyblocks.SimpleLuckyBlocks;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

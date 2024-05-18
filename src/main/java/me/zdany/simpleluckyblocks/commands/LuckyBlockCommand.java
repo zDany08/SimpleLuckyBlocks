@@ -1,5 +1,7 @@
-package me.zdany.simpleluckyblocks;
+package me.zdany.simpleluckyblocks.commands;
 
+import me.zdany.simpleluckyblocks.Format;
+import me.zdany.simpleluckyblocks.SimpleLuckyBlocks;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

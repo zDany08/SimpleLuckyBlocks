@@ -1,8 +1,9 @@
 package me.zdany.simpleluckyblocks;
 
+import me.zdany.simpleluckyblocks.commands.LuckyBlockCommand;
+import me.zdany.simpleluckyblocks.events.LuckyBlocksListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.GameRule;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandExecutor;
