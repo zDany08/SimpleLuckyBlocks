@@ -16,6 +16,10 @@ public class LuckyBlockCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(!sender.hasPermission("simpleluckyblocks.cmd.luckyblock")) {
+            sender.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("simpleluckyblocks.cmd.luckyblock")));
+            return false;
+        }
         switch(args.length) {
             case 0:
                 if(!(sender instanceof Player)) {
@@ -23,10 +27,6 @@ public class LuckyBlockCommand implements CommandExecutor, TabCompleter {
                     return false;
                 }
                 Player player = (Player) sender;
-                if(!player.hasPermission("simpleluckyblocks.cmd.luckyblock")) {
-                    player.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("simpleluckyblocks.cmd.luckyblock")));
-                    return false;
-                }
                 SimpleLuckyBlocks.getInstance().giveLuckyBlocks(player, 1);
                 break;
             case 1:
@@ -36,19 +36,11 @@ public class LuckyBlockCommand implements CommandExecutor, TabCompleter {
                     return false;
                 }
                 Player player1 = (Player) sender;
-                if(!player1.hasPermission("simpleluckyblocks.cmd.luckyblock")) {
-                    player1.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("simpleluckyblocks.cmd.luckyblock")));
-                    return false;
-                }
                 SimpleLuckyBlocks.getInstance().giveLuckyBlocks(player1, amount);
                 break;
             case 2:
                 int amount1 = Integer.parseInt(args[0]);
                 Player target = Bukkit.getPlayerExact(args[1]);
-                if(!sender.hasPermission("simpleluckyblocks.cmd.luckyblock")) {
-                    sender.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("simpleluckyblocks.cmd.luckyblock")));
-                    return false;
-                }
                 if(target == null) {
                     sender.sendMessage(Format.getColor(Format.getPlaceholders(target, SimpleLuckyBlocks.getInstance().getConfig().getString("messages.not-online").replaceAll("\\{PLAYER}", args[1]))));
                     return false;

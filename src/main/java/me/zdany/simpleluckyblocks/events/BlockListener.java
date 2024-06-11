@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 
-public class LuckyBlocksListener implements Listener {
+public class BlockListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlace(BlockPlaceEvent event) {
@@ -40,7 +40,7 @@ public class LuckyBlocksListener implements Listener {
         items.forEach(item -> {
             if(item.getItemMeta() == null) return;
             if(item.getItemMeta().getLore() == null) return;
-            if(!item.getItemMeta().getLore().contains("[Lucky Block]")) return;
+            if(!item.getItemMeta().getLore().contains("Lucky Block")) return;
             block.setMetadata("lucky-block", new FixedMetadataValue(SimpleLuckyBlocks.getInstance(), 0));
         });
     }

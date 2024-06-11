@@ -1,7 +1,7 @@
 package me.zdany.simpleluckyblocks;
 
 import me.zdany.simpleluckyblocks.commands.LuckyBlockCommand;
-import me.zdany.simpleluckyblocks.events.LuckyBlocksListener;
+import me.zdany.simpleluckyblocks.events.BlockListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -28,7 +28,7 @@ public class SimpleLuckyBlocks extends JavaPlugin {
     public void onEnable() {
         instance = this;
         registerCommands();
-        registerEvents(new LuckyBlocksListener());
+        registerEvents(new BlockListener());
         saveDefaultConfig();
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Create your own lucky blocks with " + getName() + "!");
     }
@@ -76,7 +76,7 @@ public class SimpleLuckyBlocks extends JavaPlugin {
         luckyBlockMeta.setDisplayName(Format.getColor(Format.getPlaceholders(player, getConfig().getString("lucky-block.display-name"))));
         List<String> lore = new ArrayList<>();
         for(String line : getConfig().getStringList("lucky-block.lore")) lore.add(Format.getColor(Format.getPlaceholders(player, line)));
-        lore.add("[Lucky Block]");
+        lore.add("Lucky Block");
         luckyBlockMeta.setLore(lore);
         luckyBlock.setItemMeta(luckyBlockMeta);
         player.getInventory().addItem(luckyBlock);
