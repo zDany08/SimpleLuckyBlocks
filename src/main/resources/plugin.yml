@@ -1,7 +1,7 @@
 name: SimpleLuckyBlocks
 main: me.zdany.simpleluckyblocks.SimpleLuckyBlocks
 description: Crate your own lucky blocks!
-version: 1.3.3
+version: 1.4.0
 api-version: 1.13
 authors: [ zDany ]
 softdepend: [ PlaceholderAPI ]

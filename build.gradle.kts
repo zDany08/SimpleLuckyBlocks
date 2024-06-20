@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "me.zdany.simpleluckyblocks"
-version = "1.3.3"
+version = "1.4.0"
 
 repositories {
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")

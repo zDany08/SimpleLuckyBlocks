@@ -17,7 +17,7 @@ public class LuckyBlockCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!sender.hasPermission("simpleluckyblocks.cmd.luckyblock")) {
-            sender.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("simpleluckyblocks.cmd.luckyblock")));
+            sender.sendMessage(Format.getColor(SimpleLuckyBlocks.getInstance().getConfig().getString("messages.no-permission")));
             return false;
         }
         switch(args.length) {
